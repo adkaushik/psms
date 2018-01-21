@@ -11,7 +11,7 @@
     "request-promise-native": "^1.0.5"
   },
   "scripts": {
-    "start-server": "cd ./bin && node server.js",
+    "start-server": "cd ./bin && npm start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

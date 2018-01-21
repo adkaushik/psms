@@ -5,16 +5,17 @@ const { PATH, SLOT_LIMIT, PORT } = require('./constants');
 
 const licensePlates = [];
 const queue = [];
+const exits = [];
 
 const initialData = fs.readFileSync(PATH);
 licensePlates.push(initialData.toString());
 
 fs.watchFile(PATH, function(event,filename){
   if(filename){
-    console.log('Event : ' + event);
-    console.log(filename + 'changed');
+    // console.log('Event : ' + event);
+    // console.log(filename + 'changed');
     const data = fs.readFileSync(PATH);
-    console.log('New content is \n' + data);
+    // console.log('New content is \n' + data);
     if (licensePlates.length >= SLOT_LIMIT) {
       queue.push(data.toString())
     } else {
