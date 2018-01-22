@@ -3,18 +3,24 @@
   "version": "0.1.1",
   "private": true,
   "author": "Kaushik Annangi",
-  "dependencies": {
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "react-scripts": "1.0.17",
-    "request": "^2.83.0",
-    "request-promise-native": "^1.0.5"
-  },
   "scripts": {
     "start-server": "cd ./bin && npm start",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "moment": "^2.20.1",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-router": "3.2.0",
+    "react-scripts": "1.0.17",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5",
+    "sequelize": "^4.31.2"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^3.2.0"
   }
 }
