@@ -32,7 +32,6 @@ export default class Slots extends Component {
 
     try {
       const data = await rps(options);
-      console.log(data);
       this.setState({
         data,
         slotsOccupied: data.length

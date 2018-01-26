@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 const { PATH, SLOT_LIMIT } = require('./constants');
 const fileWatcher = require('./fileWatcher');
-const UserController = require('./controllers/UserController');
+const VehicleController = require('./controllers/vehicleController');
 
 // middleware functions for the app
 // Parse incoming requests data (https://github.com/expressjs/body-parser)
@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 fileWatcher();
 
 // router
-app.get('/', UserController.findOccupied);
-app.get('/history', UserController.findHistory);
+app.get('/', VehicleController.findOccupied);
+app.get('/history', VehicleController.findHistory);
 
 module.exports = app;

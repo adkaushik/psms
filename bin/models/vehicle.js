@@ -18,5 +18,5 @@ module.exports = (sequelize, DataTypes) => {
       classMethods: {}
     }
   );
-  return User;
+  return Vehicle;
 };
