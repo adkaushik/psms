@@ -12,7 +12,7 @@ const fileWatcher = () =>
     // `true` and calculate the amount.
     // 3. If there is record and status is true, create a new record With
     // status `false`
-    const records = await models.User.findAll({ where: { number } });
+    const records = await models.Vehicle.findAll({ where: { number } });
     let parked;
 
     if (records && records.length > 0) {
@@ -24,7 +24,7 @@ const fileWatcher = () =>
         const minutesUsed = Number(((date - Date.parse(parked.createdAt)) / (1000 * 60)).toFixed(2));
         const amount = MIN_RATE + (RATE_PER_MINUTE * minutesUsed);
 
-        await models.User.update({
+        await models.Vehicle.update({
           status: true,
           amount,
           updatedAt: date
@@ -35,7 +35,7 @@ const fileWatcher = () =>
           }
         })
       } else {
-        const a = await models.User.create({
+        const a = await models.Vehicle.create({
           number,
           createdAt: Date.now(),
           updatedAt: Date.now()
@@ -43,7 +43,7 @@ const fileWatcher = () =>
         console.log(a.createdAt);
       }
     } else {
-      await models.User.create({
+      await models.Vehicle.create({
         number,
         createdAt: Date.now(),
         updatedAt: Date.now()

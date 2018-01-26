@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define(
-    'User',
+  const Vehicle = sequelize.define(
+    'Vehicle',
     {
       number: {
         type: DataTypes.STRING,
@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.FLOAT,
         allowNull: true
       },
-      status: {
+      isParked: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
       }
