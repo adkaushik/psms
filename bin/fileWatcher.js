@@ -4,20 +4,8 @@ const models = require('./models');
 
 const fileWatcher = () =>
   fs.watchFile(PATH, async (event, filename) => {
-    // if (filename) {
-    //   const data = fs.readFileSync(PATH);
-    //
-    //   if (licensePlates.length >= SLOT_LIMIT) {
-    //     queue.push(data.toString())
-    //   } else {
-    //     licensePlates.push(data.toString());
-    //   }
-    // }
-    // else {
-    //   console.log('filename not provided');
-    // }
     const number = fs.readFileSync(PATH).toString().trim();
-    console.log(number);
+
     // find this data in the table.
     // 1. If there is no record, add this record with status `false`
     // 2. If there is record and status is false, update the record with status
